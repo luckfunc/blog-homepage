@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset='utf-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
   <title>Luck Func</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet" />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <link href='https://fonts.googleapis.com/css?family=Rubik:300,500,700' rel='stylesheet' />
   <style>
     body {
+      display: flex;
       font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
@@ -16,6 +17,11 @@
       -webkit-font-smoothing: antialiased;
       padding: 5vh 10vw;
       color: #121314;
+    }
+
+    /* 左侧容器 */
+    .container-left {
+      width: 50%;
     }
 
     h1 {
@@ -38,7 +44,7 @@
       position: relative;
     }
 
-    a:after {
+    .container-left a:after {
       content: '';
       position: absolute;
       z-index: -1;
@@ -50,33 +56,116 @@
       background-color: #65DBFB;
     }
 
-    a:hover:after {
+    .container-left a:hover:after {
       top: 0%;
+    }
+
+    /* 右侧容器 */
+    .container-right {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      background-color: #212121;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* 增加模糊半径和颜色强度 */
+    }
+
+    .bar {
+      width: 80%;
+      height: 25px;
+      background: #FFDAAF;
+      border-radius: 30px;
+      transform: rotate(-15deg);
+      animation: up-down6123 3s ease-in-out 1s infinite alternate;
+    }
+
+    .ball {
+      position: relative;
+      bottom: 100px;
+      left: calc(100% - 20px);
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      background: #fff;
+      border-radius: 50%;
+      animation: ball-move8234 3s ease-in-out 1s infinite alternate;
+    }
+
+    .ball::after {
+      position: absolute;
+      content: '';
+      top: 25px;
+      right: 5px;
+      width: 5px;
+      height: 5px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    @keyframes up-down6123 {
+      from {
+        transform: rotate(-15deg);
+      }
+
+      to {
+        transform: rotate(15deg);
+      }
+    }
+
+    @keyframes ball-move8234 {
+      from {
+        left: calc(100% - 40px);
+        transform: rotate(360deg);
+      }
+
+      to {
+        left: calc(0% - 20px);
+        transform: rotate(0deg);
+      }
+    }
+
+    /* 适配移动端 */
+    @media (max-width: 768px) {
+      .container-left {
+        width: 100%;
+      }
+      .container-right {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class='container-left'>
+    <h1>Hello.</h1>
+    <p style='font-weight: 500; font-size: 2.2em'>My name is Luck Func.</p>
+    <p>
+      Hello, I am a developer passionate about frontend development. You can find me on my
+      <a href='https://github.com/luckfunc' target='_blank'>GitHub</a>
+      profile.
+    </p>
 
-  <h1>Hello.</h1>
-  <p style="font-weight: 500; font-size: 2.2em">My name is Luck Func.</p>
-  <p>
-    Hello, I am a developer passionate about frontend development. You can find me on my
-    <a href="https://github.com/luckfunc" target="_blank">GitHub</a>
-    profile.
-  </p>
+    <p style='font-weight: 500; font-size: 2.2em'>My Blog</p>
+    <p>
+      You can also find more interesting content on my blog: <a href='https://blog.gogogo7.com' target='_blank'>My
+        Blog</a>.
+    </p>
 
-  <p style="font-weight: 500; font-size: 2.2em">My Blog</p>
-  <p>
-    You can also find more interesting content on my blog: <a href="https://blog.gogogo7.com" target="_blank">My
-      Blog</a>.
-  </p>
-
-  <p style="font-weight: 500; font-size: 2.2em">My Project</p>
-  <p>
-    1. <a href="https://github.com/luckfunc/react-color-avatar">React Color Avatar</a>.
-    You can <a href="https://avatar.gogogo7.com">preview</a> it.
-  </p>
+    <p style='font-weight: 500; font-size: 2.2em'>My Project</p>
+    <p>
+      1. <a href='https://github.com/luckfunc/react-color-avatar'>React Color Avatar</a>.
+      You can <a href='https://avatar.gogogo7.com'>preview</a> it.
+    </p>
+  </div>
+  <div class='container-right'>
+    <div class='bar'>
+      <a href='https://github.com/luckfunc'>
+        <div class='ball'></div>
+      </a>
+    </div>
+  </div>
 
 </body>
 

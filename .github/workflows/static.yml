@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy_job: # 添加作业名称，比如 "deploy_job"
-    runs-on: ubuntu-latest # 根据你的需求设置运行环境
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy to the server.
         uses: cross-the-world/scp-pipeline@master
@@ -16,5 +16,5 @@ jobs:
           user: ${{ secrets.REMOTE_NAME }}
           pass: ${{ secrets.REMOTE_PASS }}
           connect_timeout: 10s
-          local: 'index.html'
+          local: 'dist/*'
           remote: ${{ secrets.REMOTE_TARGET }}

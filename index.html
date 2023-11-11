@@ -60,7 +60,7 @@
     }
 
     .container-left a:hover:after {
-      top: 0%;
+      top: 0;
     }
 
     /* 右侧容器 */
@@ -86,7 +86,7 @@
       background: #FFDAAF;
       border-radius: 30px;
       transform: rotate(-15deg);
-      animation: up-down6123 3s ease-in-out 1s infinite alternate;
+      animation: up-down 3s ease-in-out 1s infinite alternate;
     }
 
     .ball {
@@ -98,7 +98,7 @@
       cursor: pointer;
       background: #fff;
       border-radius: 50%;
-      animation: ball-move8234 3s ease-in-out 1s infinite alternate;
+      animation: ball-move 3s ease-in-out 1s infinite alternate;
     }
 
     .ball::after {
@@ -112,7 +112,7 @@
       border-radius: 50%;
     }
 
-    @keyframes up-down6123 {
+    @keyframes up-down {
       from {
         transform: rotate(-15deg);
       }
@@ -122,7 +122,7 @@
       }
     }
 
-    @keyframes ball-move8234 {
+    @keyframes ball-move {
       from {
         left: calc(100% - 40px);
         transform: rotate(360deg);
@@ -141,6 +141,12 @@
       }
       .container-right {
         display: none;
+      }
+      .footer {
+        position: absolute;
+        width: 250px;
+        left: calc(50% - 190px / 2);
+        bottom: 20px;
       }
     }
   </style>

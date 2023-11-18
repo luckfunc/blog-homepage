@@ -27,5 +27,5 @@ jobs:
           user: ${{ secrets.REMOTE_NAME }}
           pass: ${{ secrets.REMOTE_PASS }}
           connect_timeout: 10s
-          local: 'index.html'
+          local: 'index.html background.gif'
           remote: ${{ secrets.REMOTE_TARGET }}
